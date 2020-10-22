@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<!--
+ASSIGNMENT RULES
+- The solution must be pushed to the repository and be available for the tutors by the end of the day.
+- You can ask for tutor's help.
+- You can google / use StackOverflow BUT we suggest you to use just the material provided.
+- To test the page, just open it with your default browser.
+- Use Bootstrap4 classes to render the page.
+- Use correctly containers and rows in order to achieve a great display.
+ASSIGNMENT TOPIC
+You are creating a website to showcase your favourite music albums.
+In this page you'd like to have a short bio of yourself, the top albums of your life, 
+the worst album you ever listen to and everything related to the music you love.
+NOTE:
+Most of the times, even the most expert of designers needs inspiration.
+Spend 30 minutes surfing the web and searching for the way of rapresenting album that you like the most.
+Could be the Amazon way, the Spotify or Apple music way or some other blog out there.
+-->
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- IMPORT ALL THE BOOTSTRAP RELATED CSS & SCRIPTS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel='stylesheet' type='text/css' href='styles.css'>
+  </head>
+  <body>
+      <div class='container-fluid' width='100'>
+          <!-- EXERCISE 2 
+            Implement a navigation bar using the bootstrap component
+            This navigation bar must be linked to every section in your page
+        -->
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg nb m-2" id="home">
+             <div style="width: 100px; height: 100px; margin: 5px;">
+                <img href="index.html" src='./assets/album logo.jpg' alt='logo' style="width: 80px; height: 80px; margin: 5px; border-radius: 5px;"/>
+            </div>
+            <a class="navbar-brand" href="index.html">Strive Music</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-link active" href="#home">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#favorites">Favorites</a>
+                <a class="nav-link" href="#album">Album</a>
+                <a class="nav-link" href="#contact">Contact</a>
+              </div>
+            </div>
+          </nav>
+          <!-- EXERCISE 1/2
+        Use the specific bootstrap component to implement a Breadcrumb
+        --> 
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item active" aria-current="page">Home</li>
+            </ol>
+          </nav>
+
+          <!-- EXERCISE 2/2
+            Create a Jumbotron section with a quick explanation / image of the website
+        -->
+        <div class="jumbotron">
+            <h1 class="display-4">Hello!</h1>
+            <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente ipsam praesentium saepe voluptas tenetur magni nostrum minus. Exercitationem corrupti sequi, eligendi repudiandae tempore consectetur, quisquam molestias ullam neque vitae nihil?</p>
+            <hr class="my-4"><br>
+            <a class="btn btn-light btn-lg" href="#" role="button">Learn more</a>
+          </div>
+
+         <!-- EXERCISE 3
+                     Create a responsive section for your favourite albums.
+                     In this section you should have:
+                     - 4 albums per row when the screen is very large
+                     - 3 albums per row when you are on a tablet (or a smaller window)
+                     - 2 albums per row when you are on a small screen
+                 -->
+        
+                 <!-- Hall of fame -->
+                 <!-- EXERCISE 3/2
+            Foreach album in the favorite list, place the genre inside a badge
+        -->
+        <div class='container' id='favorites'>
+            <div class='row mt-4 p-2' style='background-color: #DDDBCB; width:auto;border-radius: 8px !important;'>
+                <div class='row'>
+                    <h3 style='margin-left: 40%; padding: 5px;'>Favorites:</h3>
+                </div>
+                <div class='row'>
+                    <div class='col-6 col-md-4 col-lg-3'>
+                        <!-- <img class="img-fluid album" src="assets/Toxicity.jpg" />
+                        <p>System Of A Down - Toxicity</p>
+                        <span class="badge badge-secondary">Metal</span> -->
+                        <div class="card" style="width: 16rem;">
+                            <img class="img-fluid album" src="assets/Toxicity.jpg"  />
+                            <div class="card-body">
+                                <p>System Of A Down - Toxicity</p>
+                                <span class="badge badge-secondary">Metal</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col-6 col-md-4 col-lg-3'>
+                        <!-- <img class="img-fluid album" src="assets/lz.jpg"  />
+                        <p>Led Zeppelin - Led Zeppelin IV</p>
+                        <span class="badge badge-secondary">Rock</span> -->
+                        <div class="card" style="width: 16rem;">
+                            <img class="img-fluid album" src="assets/lz.jpg"  />
+                            <div class="card-body">
+                                <p>Led Zeppelin - Led Zeppelin IV</p>
+                                <span class="badge badge-secondary">Rock</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col-6 col-md-4 col-lg-3'>
+                        <!-- <img class="img-fluid album" src="assets/duaLipa.jpg"  />
+                        <p>Dua Lipa - Future Nostalgia</p>
+                        <span class="badge badge-secondary">Pop</span> -->
+                        <div class="card" style="width: 16rem;">
+                            <img class="img-fluid album" src="assets/duaLipa.jpg"  />
+                            <div class="card-body">
+                                <p>Dua Lipa - Future Nostalgia</p>
+                                <span class="badge badge-secondary">Pop</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col-6 col-md-4 col-lg-3'>
+                        <!-- <img class="img-fluid album" src="assets/pinkFloyd.jpg"  />
+                        <p>Pink Floyd - Wish You Were Here</p>
+                        <span class="badge badge-secondary">Progressive Rock</span> -->
+                        <div class="card" style="width: 16rem;">
+                            <img class="img-fluid album" src="assets/pinkFloyd.jpg"  />
+                            <div class="card-body">
+                                <p>Pink Floyd - Wish you were here</p>
+                                <span class="badge badge-secondary">Progressive Rock</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+
+        <!-- EXERCISE 4
+            Create a section for the album review.
+            Pick one of your fav albums, and create a section with:
+            - Cover
+            - Title
+            - Band
+            - Lenght
+            - Genre
+            - Tracklist
+            - ... And whatever you think it's interesting about it!
+        -->
+        <!-- Fav album -->
+        
+        <div class='row favAlbum' style='min-height: 500px !important;  border-radius: 8px !important;' id='album'>
+            <div class='album col-12 col-md-6 col-lg-7 mt-2' style='min-width: 500px !important; border-radius: 8px !important;' >
+                <img class="img-fluid mt-5" src="assets/pf.jpg" style='height:400px; width: 100%; margin: 0 auto; left: 10%;'/>
+            </div>
+            <div class='album col-12 col-md-6 col-lg-5 mt-4' style='text-align: center; margin: 0 auto;'>
+                <h3><strong>Wish You Were Here</strong></h3>
+                    <p<span style='color: #EEE0CB'>Group:</span> Pink Floyd<br>
+                    <span style='color: #EEE0CB'>Length:</span> 44:11<br>
+                    <span style='color: #EEE0CB'>Genre:</span> Progressive Rock<br>
+                    <span style='color: #EEE0CB'>Tracks:</span></p><br>
+        <!-- EXERCISE 5/2
+            Place the tracklist inside a Bootstrap table.
+            The row column must be alternate.
+            Use one column for the track order, one of the title and one for the length.
+            (If you want, you can also add extra columns)
+        -->
+        <!-- EXERCISE 6/2
+            Add a DELETE bootstrap button on each row of the tracklist, with appropriate transitions on the various pseudo-class states 
+            which will apply for the subsequent button you'll use.
+            Clicking on the button the row must disappear. 
+            Add a fade-out effect using a CSS transition effect
+        -->
+                    <table class="table" style='color: #EEE0CB;'>
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Length</th>
+                            <th scope="col"></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Shine On You Crazy Diamond (I-IV)</td>
+                            <td>13.07</td>
+                            <td><button type="button" class="btn btn-danger" onclick="deleteRow(this)">X</button></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>Have a Cigar</td>
+                            <td>5.08</td>
+                            <td><button type="button" class="btn btn-danger" onclick="deleteRow(this)">X</button></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>Wish You Were Here</td>
+                            <td>5.35</td>
+                            <td><button type="button" class="btn btn-danger" onclick="deleteRow(this)">X</button></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">4</th>
+                            <td>"Shine On You Crazy Diamond (VI–IX)</td>
+                            <td>12.28</td>
+                            <td><button type="button" class="btn btn-danger" onclick="deleteRow(this)">X</button></td>
+                          </tr>
+                        </tbody>
+                      </table>
+            </div>
+        </div>
+        <!-- EXERCISE 5
+            Worst album list! Find out the music you don't really like or you find overrated and list it
+            in this "hall of shame" chart!
+        -->
+        <!-- hall of shame -->
+        <div class='container' style="display: none;">
+            <div class='row bg-dark'>
+                <div class='album col-6 col-md-4 col-lg-3'>
+                    <img class="img-fluid" src="https://placehold.it/300x160" />
+                </div>
+                <div class='album col-6 col-md-4 col-lg-3'>
+                    <img class="img-fluid" src="https://placehold.it/300x160" />
+                </div>
+                <div class='album col-6 col-md-4 col-lg-3'>
+                    <img class="img-fluid" src="https://placehold.it/300x160" />
+                </div>
+                <div class='album col-6 col-md-4 col-lg-3'>
+                    <img class="img-fluid" src="https://placehold.it/300x160" />
+                </div>
+            </div>
+        <hr>
+        </div>
+
+        <!-- EXERCISE 6
+            Do you have any musician / band you admire or you are fan of?
+            This section is dedicated to him / her / them!
+            Feel free to experiment in this part of the page.
+        -->
+        <div class='row bg-light' style="display: none;">
+            <div class='col-12 col-md-6 col-lg-6'>
+                <img class='img-fluid' src='https://placehold.it/500x200' />
+            </div>
+            <div class='col-12 col-md-6 col-lg-6'>
+                <h5>Tears in Heaven - Leonard Cohen</h5>
+                <h6>The story behind</h6>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos voluptates perspiciatis earum voluptate culpa sint cumque eius libero aut. Earum rerum laboriosam voluptate tempore molestias blanditiis in reprehenderit. Vel, asperiores.</p>
+            </div>
+        </div>
+        <hr>
+
+        <!-- EXERCISE 7
+            Just covers!
+            Create a tapestry of album pictures. Every album picture must be "square" (use CSS to do that).
+            Put at least 20 covers (also repeated) to have a nice effect and see how Bootstrap handles it.
+        -->
+
+        <!-- 3 per small device
+             4 per medium
+             6 per large
+        -->
+        <div class='container' style="display: none;">
+        <div class='row d-flex justify-content-center' style="display: none;">
+            <div class='cover col-4 col-md-3 col-lg-2'>
+                <img class='img-fluid col-6' src='https://placehold.it/50x50'>
+                <p class='col-6'>+</p>
+            </div>
+            <div class='cover col-4 col-md-3 col-lg-2'>
+                <img class='img-fluid col-6' src='https://placehold.it/50x50'>
+                <p class='col-6'>+</p>
+            </div>
+            <div class='cover col-4 col-md-3 col-lg-2' style='background: red'>
+                <img class='img-fluid col-6' src='https://placehold.it/50x50'>
+                <p class='col-6'>+</p>
+            </div>
+            <div class='cover col-4 col-md-3 col-lg-2' style='background: yellow'>
+                <img class='img-fluid col-6' src='https://placehold.it/50x50'>
+                <p class='col-6'>+</p>
+            </div>
+            <div class='cover col-4 col-md-3 col-lg-2'>
+                <img class='img-fluid col-6' src='https://placehold.it/50x50'>
+                <p class='col-6'>+</p>
+            </div>
+            <div class='cover col-4 col-md-3 col-lg-2'>
+                <img class='img-fluid col-6' src='https://placehold.it/50x50'>
+                <p class='col-6'>+</p>
+            </div>
+            <div class='cover col-4 col-md-3 col-lg-2'>
+                <img class='img-fluid col-6' src='https://placehold.it/50x50'>
+                <p class='col-6'>+</p>
+            </div>
+            <div class='cover col-4 col-md-3 col-lg-2'>
+                <img class='img-fluid col-6' src='https://placehold.it/50x50'>
+                <p class='col-6'>+</p>
+            </div>
+            <div class='cover col-4 col-md-3 col-lg-2'>
+                <img class='img-fluid col-6' src='https://placehold.it/50x50'>
+                <p class='col-6'>+</p>
+            </div>
+            <div class='cover col-4 col-md-3 col-lg-2'>
+                <img class='img-fluid col-6' src='https://placehold.it/50x50'>
+                <p class='col-6'>+</p>
+            </div>
+            <div class='cover col-4 col-md-3 col-lg-2'>
+                <img class='img-fluid col-6' src='https://placehold.it/50x50'>
+                <p class='col-6'>+</p>
+            </div>
+            <div class='cover col-4 col-md-3 col-lg-2'>
+                <img class='img-fluid col-6' src='https://placehold.it/50x50'>
+                <p class='col-6'>+</p>
+            </div>
+            <div class='cover col-4 col-md-3 col-lg-2'>
+                <img class='img-fluid col-6' src='https://placehold.it/50x50'>
+                <p class='col-6'>+</p>
+            </div>
+            <div class='cover col-4 col-md-3 col-lg-2'>
+                <img class='img-fluid col-6' src='https://placehold.it/50x50'>
+                <p class='col-6'>+</p>
+            </div>
+            <div class='cover col-4 col-md-3 col-lg-2'>
+                <img class='img-fluid col-6' src='https://placehold.it/50x50'>
+                <p class='col-6'>+</p>
+            </div>
+            <div class='cover col-4 col-md-3 col-lg-2'>
+                <img class='img-fluid col-6' src='https://placehold.it/50x50'>
+                <p class='col-6'>+</p>
+            </div>
+            <div class='cover col-4 col-md-3 col-lg-2'>
+                <img class='img-fluid col-6' src='https://placehold.it/50x50'>
+                <p class='col-6'>+</p>
+            </div>
+            <div class='cover col-4 col-md-3 col-lg-2'>
+                <img class='img-fluid col-6' src='https://placehold.it/50x50'>
+                <p class='col-6'>+</p>
+            </div>
+            <div class='cover col-4 col-md-3 col-lg-2'>
+                <img class='img-fluid col-6' src='https://placehold.it/50x50'>
+                <p class='col-6'>+</p>
+            </div>
+            <div class='cover col-4 col-md-3 col-lg-2'>
+                <img class='img-fluid col-6' src='https://placehold.it/50x50'>
+                <p class='col-6'>+</p>
+            </div>
+        </div>
+        <hr>
+        </div>
+
+        <!-- EXERCISE 8
+            Implement a footer with some information / social links
+        -->
+        <div class='container-fluid' style='background-color: #DDDBCB; margin: 0 auto'>
+            <br>
+            <div class='row'>
+                <div class='col-12 col-md-6 col-lg-6 contact-form' style='margin: 0 auto' id='contact'>
+                    <h3>Contact me:</h3>
+                    <input type='email' placeholder='Email' class='m-1'/>
+                    <textarea id="story" name="story" class='m-1'
+                    rows="5" cols="33" placeholder='[place your message here]'></textarea>
+                    <button type="button" class="btn btn-danger m-1">SEND</button>
+                </div><br>
+            
+                <div class='col-12 col-md-6 col-lg-6 contact-form ' style='margin: 0 auto; padding-left: 20%;'>
+                    <h6>Go to:</h6>
+                    <a class="nav-link active" href="#home">Home</a>
+                    <a class="nav-link" href="#favorites">Favorites</a>
+                    <a class="nav-link" href="#album">Album</a>
+                    <a class="nav-link" href="#contact">Contact <span class="sr-only">(current)</span></a>
+                </div><br>
+                <p style='text-align: center; margin: 0 auto; padding: 15px; background-color: #011627; 
+                color: white; width: 100%; margin-top: 15px;'>&copy, 2020</p>
+            </div>
+            <!-- EXERCISE 7
+            Add a "Contact Me" form in the footer.
+            The "Contact Me" form has 2 fields:
+            - Email
+            - Text of the message
+            Use the correct Bootstrap styles for styling the buttons
+        -->
+            <!-- <div class='col-12 col-md-6 col-lg-6 contact-form' style='margin: 0 auto' id='contact'>
+                <h3>Contact me:</h3>
+                <input type='email' placeholder='Email' class='m-1'/>
+                <textarea id="story" name="story" class='m-1'
+                rows="5" cols="33" placeholder='[place your message here]'></textarea>
+                <button type="button" class="btn btn-danger m-1">SEND</button>
+            </div> -->
+            <!-- EXERCISE 8 
+            Add to the footer an extra column with the same links of the top nav.
+            -->
+            <!-- <div class='col-12 col-md-6 col-lg-6'>
+                <a class="nav-link active" href="#home">Home</a>
+                <a class="nav-link" href="#favorites">Favorites</a>
+                <a class="nav-link" href="#album">Album</a>
+                <a class="nav-link" href="#contact">Contact <span class="sr-only">(current)</span></a>
+            </div> -->
+       </div> <!-- end of footer -->
+
+      </div> <!-- end of main container -->
+    
+    <!-- EXTRA:
+         EXERCISE 9
+            Create album details that are going to be toggled on and off by clicking on the album image
+        -->
+
+    <!-- EXERCISE 10
+            Add a button to each section. By clicking on it the section body appears (if hidden) or disappears (if visible)
+        -->
+
+    <!--
+            EXERCISE 11
+            Add in the footer a field that counts, on page load, how many ALBUMS are on the page 
+        -->
+
+
+        <script src='script.js'></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  </body>
+</html>

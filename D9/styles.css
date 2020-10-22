@@ -1,0 +1,43 @@
+/* EXERCISE 1
+      For all Albums we'd like to have a consistent style.
+      Create a class for:
+      - The album container
+      - The album cover
+      - The album title
+      - The album group / singer / dj
+      - The album genre
+      - The album duration
+      - etc
+*/
+.nb{
+    background: #011627;
+    color: white !important;
+}
+.nb a{
+    color: white;
+}
+
+.album{
+    width: 250px !important;
+    height: 250px !important;
+    border-radius: 5px;
+}
+.jumbotron {
+    background-image: url("assets/cassete.jpg");
+    background-size: cover;
+  }
+.favAlbum{
+    background: #011627;
+    color: aliceblue;
+    height: auto;
+}
+.contact-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
+    color: #011627
+}
+.contact-form a{
+    color: #011627;
+}
