@@ -58,8 +58,8 @@
       href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900"
       rel="stylesheet"
     />
-    <!-- <style>
-       /*
+    <style>
+      /*
             EX1) Write a selector to target the main title of the page
             EX2) Write a selector to target every children of the navbar
             EX3) Write a selector to target the "continue reading..." inside the jumbotron
@@ -71,63 +71,56 @@
             EX9) Write a selector to target the "back to top" link     #### EXTRA Try doing it without targeting the footer element directly
             EX10) Write a selector to target the footer
         */
-    </style> -->
-    <style>
-        /*EX1) Write a selector to target the main title of the page*/
-         h1{
-           color: #eee;
-         }
-   
-        /* EX2) Write a selector to target every children of the navbar */
-        .nav>*{
-         background-color: rgb(190, 188, 185);
-         color:black;
+        /* EX1) Write a selector to target the main title of the page */
+        h1{
+            border: 1px solid #bbb;
+            padding: 5px;
         }
-   
+        /* EX2) Write a selector to target every children of the navbar */
+        nav a.p-2{
+            color: gold !important;
+        }
         /* EX3) Write a selector to target the "continue reading..." inside the jumbotron */
-              .jumbotron a{
-                   color: #5DA9E9 !important;
-               }
-         
+        p.lead > a{
+            border-bottom: 1px solid black;
+        }
         /* EX4) Write a selector to target the first blogpost */
-        .blog-post:nth-of-type(1){
-               background-color: #E5F4E3;
-           }
-   
+        div.blog-post:first-of-type{
+            border: 1px dashed gold;
+            padding: 10px;
+        }
         /* EX5) Write a selector to target the "even" links in the navbar */
-               .nav a:nth-of-type(2n) {
-                   background-color: #F2E3BC;
-                   color: black !important;
-                }
-   
+        nav a.p-2:nth-child(even){
+            border-bottom: 1px solid purple;
+        }
         /* EX6) Write a selector to target the last blog post */
-         .blog-post:last-child {
-            background-color: rgb(0, 255, 242);
-        } 
-   
-        /* EX7) Write a selector to target all the li into the sidebar */
-            aside ol > li   {
-                 background-color: #774C60;
-            }
-              
-   
-        /* EX8) Write a selector to target the second post author  */
-            .blog-post:nth-of-type(2) a:first-child{
-               color: red;
-           }
+        div.blog-post:last-of-type{
+            border: 1px dashed purple;
+            padding: 10px;
+        }
+        /* EX7) Write a selector to target all the li into the first ordered-list in the sidebar ( Archives ) */
+        aside div:nth-child(2) li>a{
+            color: purple;
+        }
+        /* EX8) Write a selector to target the second post author */
+        div.blog-post:nth-child(3) p:first-of-type>a{
+            background-color: rgb(228, 228, 228);
+            color: red;
+            padding: 5px;
+        }
         
-        /* EX9) Write a selector to target the "back to top" link */
-               footer > p:last-child > a{
-                      background-color: rgb(215, 228, 240);
-                      }
-   
+        /* EX9) Write a selector to target the "back to top" link    
+        #### EXTRA Try doing it without targeting the footer element directly */
+        footer p:last-of-type>a{
+            border: 1px solid black;
+            padding: 5px;
+            border-radius: 4px;
+        }
         /* EX10) Write a selector to target the footer */
-             footer {
-                background-color: rgb(150, 156, 148);
-               }
-         
-       </style>
-    
+        footer{
+            text-align: center;
+        }
+    </style>
   </head>
 
   <body>
@@ -508,56 +501,93 @@
         EX19) Write a function and attach it to the "Older" button, to remove the last Blog Post
         EX20) Write an alert with the name of the author every time the user hover with the mouse over an author name
     */
-        function addLinkToNav() {
-           let navs = document.querySelector('nav:last-child');
-           let theLink = document.createElement('a');
-              theLink.innerHTML = 'AddedLink';
-              theLink.style.backgroundColor = 'green';
-          navs.append(theLink);
+    // EX11) Write a function to add a new link into the navbar
+    function addNewLink(){
+        let navbar = document.getElementsByTagName('nav')[0];
+        let newLink = document.createElement('a');
+        newLink.href = '#';
+        newLink.classList.add('p-2', 'text-muted');
+        newLink.innerText = 'New Link';
+        navbar.appendChild(newLink);
+    }
+    addNewLink();
+    // EX12) Write a function to remove the "Search" magnifying glass icon
+    function removeMagnifyingIcon(){
+        let icon = document.querySelectorAll('svg')[0];
+        icon.style.display = 'none';
+    }
+    removeMagnifyingIcon();
+    // EX13) Write a function to change the background of the jumbotron
+    function jumboSkin(){
+        let jumbo = document.querySelector('div.jumbotron');
+        jumbo.classList.remove('bg-dark');
+        jumbo.style.background = 'purple';
+    }
+    jumboSkin();
+    // EX14) Write a function to change the color of the main title
+    function changeHeaderColor(){
+        let header = document.querySelector('h1');
+        header.style.color = '#ccc';
+    }
+    changeHeaderColor();
+    // EX15) Write a function to change the column size for post headings
+    function changeColSize(){
+        let headings = document.querySelectorAll('.blog-post h2');
+        for(let i=0; i< headings.length; i++){
+            headings[i].classList.add('col-6');
+            headings[i].style.alignText = 'center';
         }
-        addLinkToNav();
-
-        function removeSearchButton() {
-            let searchBtn = document.querySelector('.text-muted svg');
-            searchBtn.style.display = 'none';
+    }
+    changeColSize();
+    // EX16) Write a function to remove all the links under "Elsewhere"
+    function emptyElswhere(){
+        let elsewhere = document.querySelectorAll('ol.list-unstyled')[1];
+        elsewhere.style.display = 'none';
+    }
+    emptyElswhere();
+    // EX17) Write a function to trim just the first 50 characters in the first paragraph for each blog post
+    function trimFirst50(){
+        let blogPost = document.querySelectorAll('.blog-post p:nth-of-type(2)');
+        for(let i=0; i<blogPost.length; i++){
+            blogPost[i].innerText = blogPost[i].innerText.slice(0, 50);
         }
-        removeSearchButton();
+    }
+    trimFirst50();
 
-        function changeJumbotronBackground() {
-          let jumbB = document.querySelector('.jumbotron');
-          jumbB.classList.remove('bg-dark');
-          jumbB.classList.add('bg-info');
-         }
-         changeJumbotronBackground();
-
-         function changeTitle() {
-          let title = document.querySelector('h1');
-          title.style.color = 'red';
-         }
-         changeTitle();
-
-        let titleForBlog  = document.querySelectorAll('.blog-post-title');
-        function changeSize() {
-        for(i=0 ; i < titleForBlog.length; i++) {
-            titleForBlog[i].classList.add('col-6');
+    // EX18) Write a function and attach it to the "Newer" button, to add new Blog Post (just div and title)
+    function addNewPost(){
+        const newerButton = document.querySelector('.blog-pagination a:nth-of-type(2)');
+        newerButton.classList.remove('disabled');
+        newerButton.onclick = function(){
+            const outerDiv = document.createElement('div');
+            outerDiv.classList.add('blog-post');
+            const postTitle = document.createElement('h2');
+            postTitle.classList.add('blog-post-title');
+            postTitle.innerText = 'NEW TITLEEE';
+            outerDiv.appendChild(postTitle);
+            document.querySelector('main .row div').appendChild(outerDiv);
         }
+    }
+    addNewPost();
+    // EX19) Write a function and attach it to the "Older" button, to remove the last Blog Post
+    const removeLastPost = function(){
+        const olderButton = document.querySelector('.blog-pagination a:nth-of-type(1)');
+        olderButton.onclick = function(){
+            const postToRemove = document.querySelector('.blog-post:last-of-type');
+            postToRemove.remove();
         }
-
-        function removeElswhereLinks() {
-          let linksElseWhere = document.querySelector('aside div:last-child ol');
-           console.log(linksElseWhere);
-           linksElseWhere.style.display = 'none';
-         }
-         removeElswhereLinks();
-    
-        // function alertAuthorName(){
-        //     let author = document.querySelectorAll('.blog-post-meta > a');
-        //     for (i = 0; i < author.length; i++) {
-        //         author[i].addEventListener('mouseover', alert(author));
-        //     }
-        
-        //  }
-        //  alertAuthorName();
+    }
+    removeLastPost();
+    // EX20) Write an alert with the name of the author every time the user hover with the mouse over an author name
+    const displayAythorName = function(){
+        const allAuthors = document.querySelectorAll('.blog-post-meta a');
+        for(let i = 0; i < allAuthors.length; i++){
+            allAuthors[i].onmouseover = function(){
+                alert(allAuthors[i].innerText);
+            }
+        }
+    }
+    displayAythorName();
     </script>
   </body>
 </html>
